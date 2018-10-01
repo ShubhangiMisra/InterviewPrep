@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+public class substring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public static ArrayList<String> getss(String str){
+
+		if(str.length()==1) {
+			ArrayList<String> bresult= new ArrayList<>();
+			bresult.add("");
+			bresult.add(str);
+			return bresult;
+		}
+		char ch=str.charAt(0);
+		String res=str.substring(1);
+		ArrayList<String> rresult= getss(res);
+		ArrayList<String> mresult=new ArrayList<>();
+		for(String ros:rresult) {
+			mresult.add("_"+res);
+			mresult.add(ch+res);
+		}
+		return mresult;
+	}
+
+}
