@@ -1,0 +1,39 @@
+package pepcodindclass11;
+
+import java.util.ArrayList;
+
+public class arraylistvariation {
+
+	public static void main(String[] args) {
+		System.out.println(getss("abc"));
+		// TODO Auto-generated method stub
+		ArrayList<String> result= new ArrayList<>();
+		System.out.println();
+		System.out.println(result);
+		result=getss("abcd");
+		System.out.println();
+		System.out.println(result);
+
+	}
+	public static ArrayList<String> getss(String str){
+
+		if(str.length()==1) {
+			ArrayList<String> bresult= new ArrayList<>();
+			bresult.add("");
+			bresult.add(str);
+			bresult.add((int)str.charAt(0)+"");
+			return bresult;
+		}
+		char ch=str.charAt(0);
+		String res=str.substring(1);
+		ArrayList<String> rresult= getss(res);
+		ArrayList<String> mresult=new ArrayList<>();
+		for(String ros:rresult) {
+			mresult.add("_"+res);
+			mresult.add(ch+res);
+			mresult.add((int)ch+res);
+		}
+		return mresult;
+	}
+
+}
