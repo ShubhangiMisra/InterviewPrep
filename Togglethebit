@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class BItMptoggle {
+
+	public static void main(String[] args) {
+		Scanner scn= new Scanner(System.in);
+		System.out.println("Enter the number");
+		int n=scn.nextInt();
+		System.out.println(n+" = "+Integer.toBinaryString(n));
+		System.out.println("Enter the position to toggle");
+		int k=scn.nextInt();
+		int bitmask = 1<<k;
+		n=n^bitmask;		
+		System.out.println(n+" = "+Integer.toBinaryString(n));
+		// TODO Auto-generated method stub
+
+	}
+
+}
